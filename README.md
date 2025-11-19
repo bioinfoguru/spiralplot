@@ -13,7 +13,7 @@ pip install .
 Or directly from GitHub:
 
 ```bash
-pip install git+https://github.com/YOUR_USERNAME/spiralplot.git
+pip install git+https://github.com/bioinfoguru/spiralplot.git
 ```
 
 ## Usage
