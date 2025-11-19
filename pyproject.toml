@@ -5,15 +5,14 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "spiralplot"
 version = "0.1.0"
-description = "A seaborn-like spiral plot generator"
+description = "A spiral plot generator"
 authors = [
-  { name="Antigravity", email="antigravity@example.com" },
+  { name="Manish Datt", email="manish@bioinfo.guru" },
 ]
 dependencies = [
     "matplotlib",
     "pandas",
     "numpy",
-    "seaborn"
 ]
 requires-python = ">=3.8"
 classifiers = [
@@ -23,4 +22,4 @@ classifiers = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/example/spiral_plot"
+"Homepage" = "https://github.com/bioinfoguru/spiralplot"
