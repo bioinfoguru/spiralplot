@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import seaborn as sns
+
 
 def spiralplot(data, x, y, spiral, ax=None, cmap='viridis', color=None, scale=1.0, spiral_scale=0.1, spiral_colors=None, **kwargs):
     """
