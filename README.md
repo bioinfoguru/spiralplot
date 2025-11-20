@@ -41,7 +41,8 @@ spiralplot(
     y='y_pos',
     spiral='magnitude',
     cmap='magma',
-    scale=0.5
+    scale=0.5,
+    dpt=15
 )
 plt.show()
 ```
@@ -67,7 +68,7 @@ plt.show()
 
 ## API
 
-### `spiralplot(data, x, y, spiral, ax=None, cmap='viridis', color=None, scale=1.0, spiral_scale=0.1, spiral_colors=None, **kwargs)`
+### `spiralplot(data, x, y, spiral, ax=None, cmap='viridis', color=None, scale=1.0, spiral_scale=0.1, spiral_colors=None, dpt=10, **kwargs)`
 
 - `data`: Input pandas DataFrame.
 - `x`: Column name for x-axis position.
@@ -81,4 +82,5 @@ plt.show()
 - `scale`: Global scaling factor for the size of the spirals relative to data coordinates.
 - `spiral_scale`: Factor to control the size of individual dots within the spiral.
 - `spiral_colors`: List of two colors (e.g. `['green', 'orange']`) to use when `spiral` is a list of two columns.
+- `dpt`: Dots per turn. Specifies the number of dots in a turn of the helix. Defaults to 10.
 - `**kwargs`: Additional arguments passed to `plt.scatter`.

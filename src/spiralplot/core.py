@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 
 
-def spiralplot(data, x, y, spiral, ax=None, cmap='viridis', color=None, scale=1.0, spiral_scale=0.1, spiral_colors=None, **kwargs):
+def spiralplot(data, x, y, spiral, ax=None, cmap='viridis', color=None, scale=1.0, spiral_scale=0.1, spiral_colors=None, dpt=10, **kwargs):
     """
     Create a scatter plot where each point is represented by a spiral glyph.
     
@@ -35,6 +35,9 @@ def spiralplot(data, x, y, spiral, ax=None, cmap='viridis', color=None, scale=1.
     spiral_colors : list of str/tuple, optional
         List of two colors to use when `spiral` contains two columns. 
         Defaults to ['blue', 'red'] if not provided.
+    dpt : int, optional
+        Dots per turn. Specifies the number of dots in a turn of the helix.
+        Defaults to 10.
     **kwargs
         Other keyword arguments passed to matplotlib.pyplot.scatter.
         
@@ -98,7 +101,7 @@ def spiralplot(data, x, y, spiral, ax=None, cmap='viridis', color=None, scale=1.
         n = n_points_total[i]
         
         # Generate spiral
-        theta = np.linspace(0, n * 0.2, n)
+        theta = np.linspace(0, n * (2 * np.pi / dpt), n)
         r = scale * 0.1 * theta 
         
         sx = cx + r * np.cos(theta)
@@ -138,10 +141,7 @@ def spiralplot(data, x, y, spiral, ax=None, cmap='viridis', color=None, scale=1.
         if np.issubdtype(s_vals_total.dtype, np.number):
             plt.colorbar(scatter, ax=ax, label=spiral)
         
-    ax.set_xlabel(x)
-    ax.set_ylabel(y)
-    title_label = f"{spiral[0]} + {spiral[1]}" if isinstance(spiral, list) else spiral
-    ax.set_title(f"Spiral Glyph Plot (size by {title_label})")
+
     
     return ax
 

@@ -28,8 +28,13 @@ def main():
 #        color='blue',
         spiral=['spiral', 'spiral2'], # Two columns
         spiral_colors=['green', 'orange'],
-        scale=0.1 # Adjusted scale for this data range
+        scale=0.1, # Adjusted scale for this data range
+        dpt=30 # Dots per turn
     )
+    
+    plt.xlabel("X")
+    plt.ylabel("Y")
+    plt.title("Spiral Glyph Plot (size by spiral + spiral2)")
     
     plt.savefig('spiral_demo_dual.png')
     print("Spiral glyph plot saved to spiral_demo_dual.png")
